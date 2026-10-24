@@ -1,0 +1,84 @@
+<resources>
+    <!-- General App Strings -->
+    <string name="app_name">GymSync</string>
+    <string name="app_subtitle">Tu Compañero Fitness</string>
+    <string name="action_save">Guardar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_confirm">Confirmar</string>
+    <string name="action_add">Agregar</string>
+    <string name="action_search">Buscar</string>
+    <string name="action_logout">Cerrar Sesión</string>
+    <string name="loading">Cargando...</string>
+    <string name="error_generic">Ha ocurrido un error inesperado.</string>
+
+    <!-- Navigation Tabs -->
+    <string name="nav_dashboard">Panel Principal</string>
+    <string name="nav_routines">Rutinas</string>
+    <string name="nav_exercises">Ejercicios</string>
+    <string name="nav_gallery">Galería de Progreso</string>
+    <string name="nav_map">Mapa de Gimnasios</string>
+
+    <!-- Authentication -->
+    <string name="auth_title_login">Iniciar Sesión</string>
+    <string name="auth_email_hint">Correo electrónico</string>
+    <string name="auth_password_hint">Contraseña</string>
+    <string name="auth_button_login">Iniciar Sesión</string>
+    <string name="auth_no_account">¿No tienes cuenta? Regístrate</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_greeting">¡Hola, %1$s!</string>
+    <string name="dashboard_streak">Racha actual: 🔥 %1$d días</string>
+    <string name="dashboard_today_routine">Rutina de Hoy: %1$s</string>
+    <string name="dashboard_increment_streak">Registrar Entrenamiento de Hoy</string>
+
+    <!-- Muscle Groups / Categories -->
+    <string name="muscle_group_all">Todos</string>
+    <string name="muscle_group_chest">Pecho</string>
+    <string name="muscle_group_legs">Piernas</string>
+    <string name="muscle_group_back">Espalda</string>
+    <string name="muscle_group_abs">Abdomen</string>
+    <string name="muscle_group_arms">Brazos</string>
+    <string name="muscle_group_shoulders">Hombros</string>
+    <string name="muscle_group_cardio">Cardio</string>
+
+    <!-- Exercise Module -->
+    <string name="exercise_list_title">Biblioteca de Ejercicios</string>
+    <string name="exercise_search_hint">Buscar ejercicio por nombre...</string>
+    <string name="exercise_add_title">Agregar Nuevo Ejercicio</string>
+    <string name="exercise_edit_title">Editar Ejercicio</string>
+    <string name="exercise_name_label">Nombre del Ejercicio</string>
+    <string name="exercise_desc_label">Descripción</string>
+    <string name="exercise_sets_label">Series</string>
+    <string name="exercise_reps_label">Repeticiones</string>
+    <string name="exercise_weight_label">Peso (kg)</string>
+    <string name="exercise_delete_confirm">¿Estás seguro de que deseas eliminar este ejercicio?</string>
+
+    <!-- Routine Module -->
+    <string name="routine_list_title">Rutinas de Entrenamiento</string>
+    <string name="routine_add_title">Crear Rutina</string>
+    <string name="routine_difficulty">Dificultad: %1$s</string>
+    <string name="routine_exercise_count">%1$d ejercicios incluidos</string>
+
+    <!-- Progress Gallery Module -->
+    <string name="gallery_title">Galería de Progreso</string>
+    <string name="gallery_add_photo">Agregar Foto de Progreso</string>
+    <string name="gallery_weight_format">%1$.1f kg</string>
+    <string name="gallery_notes_hint">Notas (ej. ¡Sintiéndome más fuerte!)</string>
+    <string name="gallery_empty">No hay fotos de progreso registradas aún.</string>
+    <string name="gallery_delete_confirm">¿Estás seguro de que deseas eliminar esta foto?</string>
+
+    <!-- Map & Branches Module -->
+    <string name="map_title">Sucursales de Gimnasios</string>
+    <string name="map_status_open">Abierto Ahora</string>
+    <string name="map_status_closed">Cerrado</string>
+    <string name="map_distance_format">A %1$.1f km de distancia</string>
+    <string name="map_hours_label">Horario: %1$s</string>
+
+    <!-- Validations & Dialogs -->
+    <string name="val_field_required">Este campo es obligatorio.</string>
+    <string name="val_positive_number">Debe ser un número positivo.</string>
+    <string name="dialog_title_confirm">Confirmar Acción</string>
+    <string name="dialog_message_delete">¿Estás seguro de que deseas proceder con la eliminación?</string>
+</resources>
