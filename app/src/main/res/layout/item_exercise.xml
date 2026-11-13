@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
@@ -25,18 +26,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Press de Banca"
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="Bench Press" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipCategory"
                 style="@style/Widget.Material3.Chip.Assist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CHEST"
-                app:chipMinTouchTargetSize="0dp" />
+                app:chipMinTouchTargetSize="0dp"
+                tools:text="CHEST" />
         </LinearLayout>
 
         <TextView
@@ -44,9 +45,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Barbell chest press targeting pectoral muscles and triceps."
             android:textColor="?attr/colorOnSurfaceVariant"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            tools:text="Barbell chest press targeting pectoral muscles." />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -59,19 +60,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="4 sets x 10 reps"
                 android:textColor="?attr/colorPrimary"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="4 sets x 10 reps" />
 
             <TextView
                 android:id="@+id/tvWeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="70.0 kg"
                 android:textColor="?attr/colorSecondary"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="70.0 kg" />
         </LinearLayout>
 
         <LinearLayout

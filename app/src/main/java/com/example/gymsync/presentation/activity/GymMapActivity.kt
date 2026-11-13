@@ -21,7 +21,7 @@ class GymMapActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gym_map)
 
-        viewModel = GymMapViewModel(MemoryDataRepository())
+        viewModel = GymMapViewModel(MemoryDataRepository(this))
 
         rvBranches = findViewById(R.id.rvBranches)
         rvBranches.layoutManager = LinearLayoutManager(this)

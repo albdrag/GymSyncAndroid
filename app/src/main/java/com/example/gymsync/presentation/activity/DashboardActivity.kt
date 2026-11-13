@@ -25,7 +25,7 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        viewModel = DashboardViewModel(MemoryDataRepository())
+        viewModel = DashboardViewModel(MemoryDataRepository(this))
 
         tvGreeting = findViewById(R.id.tvGreeting)
         tvStreak = findViewById(R.id.tvStreak)
@@ -35,8 +35,8 @@ class DashboardActivity : AppCompatActivity() {
         setupQuickNavigation()
 
         btnLogWorkout.setOnClickListener {
-            viewModel.incrementStreak()
-            Toast.makeText(this, "Workout logged! Streak increased! 🔥", Toast.LENGTH_SHORT).show()
+            val updatedProfile = viewModel.incrementStreak()
+            Toast.makeText(this, "Workout logged! Streak increased to " + updatedProfile.streakDays + " days!", Toast.LENGTH_SHORT).show()
             updateDashboardUi()
         }
 
@@ -44,9 +44,10 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     private fun updateDashboardUi() {
-        tvGreeting.text = getString(R.string.dashboard_greeting, "Jordan")
-        tvStreak.text = getString(R.string.dashboard_streak, 6)
-        tvTodayRoutineTitle.text = getString(R.string.dashboard_today_routine, "Legs & Core")
+        val profile = viewModel.getUserProfile()
+        tvGreeting.text = getString(R.string.dashboard_greeting, profile.name)
+        tvStreak.text = getString(R.string.dashboard_streak, profile.streakDays)
+        tvTodayRoutineTitle.text = getString(R.string.dashboard_today_routine, profile.activeRoutineName)
     }
 
     private fun setupQuickNavigation() {

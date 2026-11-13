@@ -33,7 +33,7 @@ class AddEditExerciseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_edit_exercise)
 
-        viewModel = ExerciseViewModel(MemoryDataRepository())
+        viewModel = ExerciseViewModel(MemoryDataRepository(this))
 
         etName = findViewById(R.id.etName)
         etDescription = findViewById(R.id.etDescription)

@@ -23,7 +23,7 @@ class ProgressGalleryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_progress_gallery)
 
-        viewModel = ProgressGalleryViewModel(MemoryDataRepository())
+        viewModel = ProgressGalleryViewModel(MemoryDataRepository(this))
 
         rvGallery = findViewById(R.id.rvGallery)
         fabAddPhoto = findViewById(R.id.fabAddPhoto)

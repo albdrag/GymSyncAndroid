@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainDashboard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,7 +32,8 @@
                     android:layout_height="wrap_content"
                     android:textColor="?attr/colorOnSurface"
                     android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="Hello, Jordan!" />
 
                 <TextView
                     android:id="@+id/tvStreak"
@@ -40,7 +42,8 @@
                     android:layout_marginTop="8dp"
                     android:textColor="?attr/colorPrimary"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="Current Streak: 5 days" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnLogWorkout"
@@ -72,13 +75,14 @@
                     android:layout_height="wrap_content"
                     android:textColor="?attr/colorOnSurface"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="Today's Routine: Legs &amp; Core" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Squats, Leg Press, Plank"
+                    android:text="@string/dashboard_sample_routine_summary"
                     android:textColor="?attr/colorOnSurfaceVariant"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -121,13 +125,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🏋️"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
                         android:text="@string/nav_exercises"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -153,13 +150,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="📋"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
                         android:text="@string/nav_routines"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -185,13 +175,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="📸"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
                         android:text="@string/nav_gallery"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -217,13 +200,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="📍"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
                         android:text="@string/nav_map"
                         android:textStyle="bold" />
                 </LinearLayout>

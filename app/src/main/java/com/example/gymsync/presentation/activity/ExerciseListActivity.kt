@@ -32,7 +32,7 @@ class ExerciseListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercise_list)
 
-        viewModel = ExerciseViewModel(MemoryDataRepository())
+        viewModel = ExerciseViewModel(MemoryDataRepository(this))
 
         etSearchExercise = findViewById(R.id.etSearchExercise)
         chipGroupCategories = findViewById(R.id.chipGroupCategories)

@@ -23,7 +23,7 @@ class RoutineListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_routine_list)
 
-        viewModel = RoutineViewModel(MemoryDataRepository())
+        viewModel = RoutineViewModel(MemoryDataRepository(this))
 
         rvRoutines = findViewById(R.id.rvRoutines)
         fabAddRoutine = findViewById(R.id.fabAddRoutine)
