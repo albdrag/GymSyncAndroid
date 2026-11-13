@@ -1,0 +1,141 @@
+{
+  "userProfile": {
+    "id": "u1",
+    "name": "Jordan Alban Alvarez Vega",
+    "email": "jordan@gymsync.com",
+    "streakDays": 5,
+    "activeRoutineName": "Legs & Core"
+  },
+  "exercises": [
+    {
+      "id": "e1",
+      "name": "Bench Press",
+      "description": "Barbell chest press targeting pectoral muscles and triceps.",
+      "muscleGroup": "CHEST",
+      "sets": 4,
+      "reps": 10,
+      "weightKg": 70.0,
+      "imageUrl": ""
+    },
+    {
+      "id": "e2",
+      "name": "Barbell Squat",
+      "description": "Deep squat exercise targeting quadriceps, glutes, and core.",
+      "muscleGroup": "LEGS",
+      "sets": 4,
+      "reps": 12,
+      "weightKg": 90.0,
+      "imageUrl": ""
+    },
+    {
+      "id": "e3",
+      "name": "Conventional Deadlift",
+      "description": "Compound lift targeting posterior chain, hamstrings, and lower back.",
+      "muscleGroup": "BACK",
+      "sets": 3,
+      "reps": 8,
+      "weightKg": 110.0,
+      "imageUrl": ""
+    },
+    {
+      "id": "e4",
+      "name": "Pull-Ups",
+      "description": "Bodyweight upper body pulling exercise targeting latissimus dorsi.",
+      "muscleGroup": "BACK",
+      "sets": 4,
+      "reps": 10,
+      "weightKg": 0.0,
+      "imageUrl": ""
+    },
+    {
+      "id": "e5",
+      "name": "Barbell Bicep Curl",
+      "description": "Standing bicep isolation curl with straight barbell.",
+      "muscleGroup": "ARMS",
+      "sets": 3,
+      "reps": 12,
+      "weightKg": 25.0,
+      "imageUrl": ""
+    },
+    {
+      "id": "e6",
+      "name": "Overhead Shoulder Press",
+      "description": "Standing overhead barbell press targeting anterior deltoids.",
+      "muscleGroup": "SHOULDERS",
+      "sets": 4,
+      "reps": 10,
+      "weightKg": 40.0,
+      "imageUrl": ""
+    },
+    {
+      "id": "e7",
+      "name": "Abdominal Plank",
+      "description": "Isometric core stability exercise.",
+      "muscleGroup": "ABS",
+      "sets": 3,
+      "reps": 60,
+      "weightKg": 0.0,
+      "imageUrl": ""
+    },
+    {
+      "id": "e8",
+      "name": "HIIT Treadmill Sprint",
+      "description": "High intensity interval running on treadmill.",
+      "muscleGroup": "CARDIO",
+      "sets": 5,
+      "reps": 1,
+      "weightKg": 0.0,
+      "imageUrl": ""
+    }
+  ],
+  "routines": [
+    {
+      "id": "r1",
+      "name": "Legs & Core",
+      "description": "Lower body power and core stability workout.",
+      "difficultyLevel": "Intermediate"
+    },
+    {
+      "id": "r2",
+      "name": "Upper Body Power",
+      "description": "Chest, back, and arm strength routine.",
+      "difficultyLevel": "Advanced"
+    }
+  ],
+  "progressPhotos": [
+    {
+      "id": "p1",
+      "photoUri": "android.resource://com.example.gymsync/drawable/ic_launcher_background",
+      "weightKg": 75.5,
+      "notes": "Starting month 1 progress photo."
+    },
+    {
+      "id": "p2",
+      "photoUri": "android.resource://com.example.gymsync/drawable/ic_launcher_background",
+      "weightKg": 74.0,
+      "notes": "End of month 1 progress update."
+    }
+  ],
+  "gymBranches": [
+    {
+      "id": "g1",
+      "name": "GymSync Central",
+      "address": "Av. Central 123, San José",
+      "latitude": 9.9333,
+      "longitude": -84.0833,
+      "distanceKm": 1.2,
+      "isOpen": true,
+      "openingHours": "6:00 AM - 10:00 PM"
+    },
+    {
+      "id": "g2",
+      "name": "GymSync North Branch",
+      "address": "Calle 45 Norte, Heredia",
+      "latitude": 9.9981,
+      "longitude": -84.1197,
+      "distanceKm": 4.5,
+      "isOpen": true,
+      "openingHours": "5:00 AM - 11:00 PM"
+    }
+  ]
+}
