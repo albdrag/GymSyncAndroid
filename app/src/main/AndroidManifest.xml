@@ -11,16 +11,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GymSync">
+
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.activity.LoginActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".presentation.activity.DashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".presentation.activity.ExerciseListActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".presentation.activity.AddEditExerciseActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".presentation.activity.RoutineListActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".presentation.activity.ProgressGalleryActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".presentation.activity.GymMapActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
