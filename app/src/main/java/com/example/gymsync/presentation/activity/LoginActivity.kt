@@ -54,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
             return
         }
 
-        Toast.makeText(this, getString(R.string.auth_title_login) + " Successful!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.toast_login_success), Toast.LENGTH_SHORT).show()
 
         val intent = Intent(this, DashboardActivity::class.java)
         startActivity(intent)

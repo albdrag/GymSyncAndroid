@@ -81,6 +81,14 @@
     <string name="map_api_integration">Integración con API de Google Maps</string>
     <string name="map_nearby_branches">Sucursales Cercanas</string>
 
+    <!-- Toast Feedback Messages -->
+    <string name="toast_login_success">¡Inicio de sesión exitoso!</string>
+    <string name="toast_workout_logged">¡Entrenamiento registrado! Racha actualizada a %1$d días.</string>
+    <string name="toast_exercise_saved">¡Ejercicio guardado exitosamente!</string>
+    <string name="toast_filtering_by">Filtrando por: %1$s</string>
+    <string name="toast_category_selected">Categoría seleccionada: %1$s</string>
+    <string name="toast_map_loaded">Mapa de gimnasios cargado exitosamente.</string>
+
     <!-- Validations & Dialogs -->
     <string name="val_field_required">Este campo es obligatorio.</string>
     <string name="val_positive_number">Debe ser un número positivo.</string>

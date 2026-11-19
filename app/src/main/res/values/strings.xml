@@ -81,6 +81,14 @@
     <string name="map_api_integration">Google Maps API Integration</string>
     <string name="map_nearby_branches">Nearby Branches</string>
 
+    <!-- Toast Feedback Messages -->
+    <string name="toast_login_success">Sign in successful!</string>
+    <string name="toast_workout_logged">Workout logged! Streak updated to %1$d days.</string>
+    <string name="toast_exercise_saved">Exercise saved successfully!</string>
+    <string name="toast_filtering_by">Filtering by: %1$s</string>
+    <string name="toast_category_selected">Category selected: %1$s</string>
+    <string name="toast_map_loaded">Gym map loaded successfully.</string>
+
     <!-- Validations & Dialogs -->
     <string name="val_field_required">This field is required.</string>
     <string name="val_positive_number">Must be a positive number.</string>

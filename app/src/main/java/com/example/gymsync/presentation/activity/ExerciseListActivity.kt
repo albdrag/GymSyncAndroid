@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gymsync.R
 import com.example.gymsync.data.memory.MemoryDataRepository
-import com.example.gymsync.domain.model.Exercise
 import com.example.gymsync.domain.model.MuscleGroup
 import com.example.gymsync.presentation.viewmodel.ExerciseViewModel
 import com.google.android.material.chip.ChipGroup
@@ -50,7 +49,7 @@ class ExerciseListActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 viewModel.setSearchQuery(s?.toString() ?: "")
-                Toast.makeText(this@ExerciseListActivity, "Filtering by: " + (s ?: ""), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ExerciseListActivity, getString(R.string.toast_filtering_by, s ?: ""), Toast.LENGTH_SHORT).show()
             }
             override fun afterTextChanged(s: Editable?) {}
         })
@@ -68,7 +67,7 @@ class ExerciseListActivity : AppCompatActivity() {
                     else -> MuscleGroup.ALL
                 }
                 viewModel.setSelectedMuscleGroup(muscleGroup)
-                Toast.makeText(this, "Selected category: " + muscleGroup.name, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.toast_category_selected, muscleGroup.name), Toast.LENGTH_SHORT).show()
             }
         }
     }

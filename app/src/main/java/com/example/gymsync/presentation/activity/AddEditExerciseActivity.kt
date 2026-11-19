@@ -94,7 +94,7 @@ class AddEditExerciseActivity : AppCompatActivity() {
         )
 
         viewModel.addExercise(newExercise)
-        Toast.makeText(this, "Exercise saved successfully!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.toast_exercise_saved), Toast.LENGTH_SHORT).show()
         finish()
     }
 }

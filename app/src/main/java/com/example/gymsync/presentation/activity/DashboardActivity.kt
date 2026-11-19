@@ -36,7 +36,7 @@ class DashboardActivity : AppCompatActivity() {
 
         btnLogWorkout.setOnClickListener {
             val updatedProfile = viewModel.incrementStreak()
-            Toast.makeText(this, "Workout logged! Streak increased to " + updatedProfile.streakDays + " days!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.toast_workout_logged, updatedProfile.streakDays), Toast.LENGTH_SHORT).show()
             updateDashboardUi()
         }
 

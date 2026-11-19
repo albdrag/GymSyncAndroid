@@ -26,6 +26,6 @@ class GymMapActivity : AppCompatActivity() {
         rvBranches = findViewById(R.id.rvBranches)
         rvBranches.layoutManager = LinearLayoutManager(this)
 
-        Toast.makeText(this, getString(R.string.map_title) + " Loaded", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.toast_map_loaded), Toast.LENGTH_SHORT).show()
     }
 }
