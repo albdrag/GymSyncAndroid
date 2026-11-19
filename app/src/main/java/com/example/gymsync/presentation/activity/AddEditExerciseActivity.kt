@@ -5,6 +5,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gymsync.R
@@ -13,13 +14,15 @@ import com.example.gymsync.domain.model.Exercise
 import com.example.gymsync.domain.model.MuscleGroup
 import com.example.gymsync.presentation.viewmodel.ExerciseViewModel
 import com.example.gymsync.util.ValidationUtils
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 /**
- * Activity for creating or editing an exercise entry.
+ * Activity for creating or editing an exercise entry with confirmation dialogs.
  */
 class AddEditExerciseActivity : AppCompatActivity() {
 
     private lateinit var viewModel: ExerciseViewModel
+    private lateinit var tvFormTitle: TextView
     private lateinit var etName: EditText
     private lateinit var etDescription: EditText
     private lateinit var spinnerMuscleGroup: Spinner
@@ -29,12 +32,16 @@ class AddEditExerciseActivity : AppCompatActivity() {
     private lateinit var btnSave: Button
     private lateinit var btnCancel: Button
 
+    private var currentExerciseId: String? = null
+    private var isEditMode: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_edit_exercise)
 
         viewModel = ExerciseViewModel(MemoryDataRepository(this))
 
+        tvFormTitle = findViewById(R.id.tvFormTitle)
         etName = findViewById(R.id.etName)
         etDescription = findViewById(R.id.etDescription)
         spinnerMuscleGroup = findViewById(R.id.spinnerMuscleGroup)
@@ -49,17 +56,39 @@ class AddEditExerciseActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerMuscleGroup.adapter = adapter
 
+        checkIntentForEditMode(categories)
+
         btnCancel.setOnClickListener {
             Toast.makeText(this, getString(R.string.action_cancel), Toast.LENGTH_SHORT).show()
             finish()
         }
 
         btnSave.setOnClickListener {
-            saveExercise()
+            validateAndSave()
         }
     }
 
-    private fun saveExercise() {
+    private fun checkIntentForEditMode(categories: List<String>) {
+        if (intent.hasExtra(ExerciseListActivity.EXTRA_EXERCISE_ID)) {
+            isEditMode = true
+            currentExerciseId = intent.getStringExtra(ExerciseListActivity.EXTRA_EXERCISE_ID)
+            tvFormTitle.text = getString(R.string.exercise_edit_title)
+
+            etName.setText(intent.getStringExtra(ExerciseListActivity.EXTRA_EXERCISE_NAME) ?: "")
+            etDescription.setText(intent.getStringExtra(ExerciseListActivity.EXTRA_EXERCISE_DESC) ?: "")
+            etSets.setText(intent.getIntExtra(ExerciseListActivity.EXTRA_EXERCISE_SETS, 3).toString())
+            etReps.setText(intent.getIntExtra(ExerciseListActivity.EXTRA_EXERCISE_REPS, 10).toString())
+            etWeight.setText(intent.getDoubleExtra(ExerciseListActivity.EXTRA_EXERCISE_WEIGHT, 0.0).toString())
+
+            val categoryName = intent.getStringExtra(ExerciseListActivity.EXTRA_EXERCISE_CATEGORY) ?: ""
+            val categoryIndex = categories.indexOf(categoryName)
+            if (categoryIndex != -1) {
+                spinnerMuscleGroup.setSelection(categoryIndex)
+            }
+        }
+    }
+
+    private fun validateAndSave() {
         val name = etName.text.toString().trim()
         val desc = etDescription.text.toString().trim()
         val setsStr = etSets.text.toString().trim()
@@ -83,8 +112,31 @@ class AddEditExerciseActivity : AppCompatActivity() {
             MuscleGroup.CHEST
         }
 
-        val newExercise = Exercise(
-            id = "",
+        if (isEditMode) {
+            MaterialAlertDialogBuilder(this)
+                .setTitle(getString(R.string.dialog_title_update))
+                .setMessage(getString(R.string.dialog_message_update))
+                .setNegativeButton(getString(R.string.action_cancel), null)
+                .setPositiveButton(getString(R.string.action_save)) { _, _ ->
+                    performSave(currentExerciseId ?: "", name, desc, category, sets, reps, weight)
+                }
+                .show()
+        } else {
+            performSave("", name, desc, category, sets, reps, weight)
+        }
+    }
+
+    private fun performSave(
+        id: String,
+        name: String,
+        desc: String,
+        category: MuscleGroup,
+        sets: Int,
+        reps: Int,
+        weight: Double
+    ) {
+        val exercise = Exercise(
+            id = id,
             name = name,
             description = desc,
             muscleGroup = category,
@@ -93,8 +145,13 @@ class AddEditExerciseActivity : AppCompatActivity() {
             weightKg = weight
         )
 
-        viewModel.addExercise(newExercise)
-        Toast.makeText(this, getString(R.string.toast_exercise_saved), Toast.LENGTH_SHORT).show()
+        if (isEditMode) {
+            viewModel.updateExercise(exercise)
+            Toast.makeText(this, getString(R.string.toast_exercise_updated), Toast.LENGTH_SHORT).show()
+        } else {
+            viewModel.addExercise(exercise)
+            Toast.makeText(this, getString(R.string.toast_exercise_saved), Toast.LENGTH_SHORT).show()
+        }
         finish()
     }
 }

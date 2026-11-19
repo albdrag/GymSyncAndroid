@@ -85,6 +85,8 @@
     <string name="toast_login_success">¡Inicio de sesión exitoso!</string>
     <string name="toast_workout_logged">¡Entrenamiento registrado! Racha actualizada a %1$d días.</string>
     <string name="toast_exercise_saved">¡Ejercicio guardado exitosamente!</string>
+    <string name="toast_exercise_updated">¡Ejercicio actualizado exitosamente!</string>
+    <string name="toast_exercise_deleted">¡Ejercicio eliminado exitosamente!</string>
     <string name="toast_filtering_by">Filtrando por: %1$s</string>
     <string name="toast_category_selected">Categoría seleccionada: %1$s</string>
     <string name="toast_map_loaded">Mapa de gimnasios cargado exitosamente.</string>
@@ -93,5 +95,8 @@
     <string name="val_field_required">Este campo es obligatorio.</string>
     <string name="val_positive_number">Debe ser un número positivo.</string>
     <string name="dialog_title_confirm">Confirmar Acción</string>
-    <string name="dialog_message_delete">¿Estás seguro de que deseas proceder con la eliminación?</string>
+    <string name="dialog_title_update">Confirmar Actualización</string>
+    <string name="dialog_message_update">¿Estás seguro de que deseas guardar los cambios en este ejercicio?</string>
+    <string name="dialog_title_delete">Confirmar Eliminación</string>
+    <string name="dialog_message_delete">¿Estás seguro de que deseas eliminar este ejercicio?</string>
 </resources>
