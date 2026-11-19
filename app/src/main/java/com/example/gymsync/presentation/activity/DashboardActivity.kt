@@ -2,9 +2,7 @@ package com.example.gymsync.presentation.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gymsync.R
 import com.example.gymsync.data.memory.MemoryDataRepository
@@ -19,7 +17,6 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var tvGreeting: TextView
     private lateinit var tvStreak: TextView
     private lateinit var tvTodayRoutineTitle: TextView
-    private lateinit var btnLogWorkout: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,16 +27,8 @@ class DashboardActivity : AppCompatActivity() {
         tvGreeting = findViewById(R.id.tvGreeting)
         tvStreak = findViewById(R.id.tvStreak)
         tvTodayRoutineTitle = findViewById(R.id.tvTodayRoutineTitle)
-        btnLogWorkout = findViewById(R.id.btnLogWorkout)
 
         setupQuickNavigation()
-
-        btnLogWorkout.setOnClickListener {
-            val updatedProfile = viewModel.incrementStreak()
-            Toast.makeText(this, getString(R.string.toast_workout_logged, updatedProfile.streakDays), Toast.LENGTH_SHORT).show()
-            updateDashboardUi()
-        }
-
         updateDashboardUi()
     }
 
